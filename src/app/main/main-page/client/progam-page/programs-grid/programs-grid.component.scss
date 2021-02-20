@@ -1,0 +1,58 @@
+span i {
+  color: yellow;
+}
+
+.pad-left {
+  padding-left: 100px;
+}
+
+.program-img {
+  width: 640px;
+  height: 360px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 10px black;
+}
+
+.program-img-wrapper {
+  .play-btn {
+    width: 15%;
+    height: auto;
+    z-index: 999;
+    position: absolute;
+    bottom: 35%;
+    left: 5%;
+    right: 0;
+   margin-left: auto;
+    margin-right: auto;
+  }
+
+  .play-btn__svg{
+    transition: 1s;
+    fill:#ffffff;
+    opacity: .75;
+  }
+
+  .play-btn:hover .play-btn__svg {
+    fill: #a41d33;
+    opacity: 1;
+  }
+}
+
+
+.program-heading {
+  line-height: 1;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.desc {
+  margin-top: 20px;
+  padding-top: 10px;
+  width: 80%;
+  font-size: 16px;
+  border-top: 1px solid rgb(36, 36, 36);
+}
+
+.show-less {
+  height: 12rem;
+  overflow: hidden;
+}

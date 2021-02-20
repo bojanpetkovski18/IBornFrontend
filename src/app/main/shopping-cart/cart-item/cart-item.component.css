@@ -1,0 +1,13 @@
+a {
+  color: rgb(184, 184, 184);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.link-text {
+  line-height: 35px;
+}

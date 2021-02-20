@@ -1,0 +1,124 @@
+<div class="container-fluid">
+  <div class="cart">
+    <div class="row row1">
+      <div class="col-md-4">
+        <img src="{{product.Img}}" width="100%" id="ProductImg">
+      </div>
+      <div class="col-md-6">
+        <h1 class="product-title"><span style="font-style: normal;">{{product.Brand}}</span> - {{product.Name}}
+          <span *ngIf="product.Discount">
+            <span class="product-new-label">Sale {{ product.Discount }}%</span>
+          </span>
+        </h1>
+
+        <div class="reviews">
+          <span *ngIf="product.Rating == 0">
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </span>
+          <span *ngIf="product.Rating == 1">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </span>
+          <span *ngIf="product.Rating == 2">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </span>
+          <span *ngIf="product.Rating == 3">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </span>
+          <span *ngIf="product.Rating == 4">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </span>
+          <span *ngIf="product.Rating == 5">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+          </span>
+          <p>{{ product.Price + (product.Price * (product.Discount)) + 154 }} reviews</p>
+        </div>
+        <div class="price">
+          <span *ngIf="product.Discount">
+            ${{ product.Price - (product.Price * (product.Discount/100)) }}
+          </span>
+          <span *ngIf="product.Discount">${{ product.Price }}</span>
+          <span *ngIf="!product.Discount">
+            ${{ product.Price }}</span>
+          <span *ngIf="!product.Discount">
+          </span>
+        </div>
+        <div class="row">
+          <div *ngIf="product.Category=='Gear'" class="col-md-4">
+            <h4>Color</h4>
+            <div class="colors">
+              <div class="black"></div>
+              <div class="red"></div>
+              <div class="white"></div>
+              <div class="yellow"></div>
+            </div>
+          </div>
+          <div *ngIf="product.Category=='Gear'" class="col-md-4 sze">
+            <h5>Size</h5>
+            <select class="size custom-select">
+              <option>Select Size</option>
+              <option>39</option>
+              <option>40</option>
+              <option>41</option>
+              <option>42</option>
+            </select>
+          </div>
+          <div class="col-md-4 qty">
+            <h5>Quantity ({{ product.Quantity }})</h5>
+            <select class="quantity custom-select">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+        </div>
+        <div id="product" class="product-inf">
+          <ul>
+            <li class="active">Product Description</li>
+            <li>Product Details</li>
+          </ul>
+          <div class="tabs-content">
+            <div id="Description">
+              <p>{{product.Description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="row">
+            <div class="col-md-6">
+              <a (click)="onAddToCart()" class="custom-btn">Add To Cart <i class="fas fa-angle-right"></i></a>
+            </div>
+            <div class="col-md-6">
+              <a (click)="OnBack()" class="custom-btn"><i class="fas fa-angle-left"></i>&nbsp;&nbsp; Go
+                Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

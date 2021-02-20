@@ -1,0 +1,74 @@
+<div class="product-grid sha">
+  <div class="product-image">
+    <a routerLink="/details/{{ product.id }}">
+      <img class="pic-1" src="{{ product.Img }}" />
+      <div class="icons animate">
+        <button class="btn myRound"><i class="fas fa-info"></i></button>
+        &nbsp;
+        <span *ngIf="product.Rating == 0">
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="product.Rating == 1">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="product.Rating == 2">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="product.Rating == 3">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="product.Rating == 4">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="product.Rating == 5">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+        </span>
+        &nbsp;
+        <span style="background:black; color: rgb(255, 255, 255); font-weight: 700;"> Q ({{ product.Quantity
+          }})</span>
+      </div>
+    </a>
+    <span *ngIf="product.Discount">
+      <span class="product-new-label">Sale</span>
+      <span class="product-discount-label">{{ product.Discount }}%</span>
+    </span>
+    <span *ngIf="!product.Discount" class="product-new-label" style="background: #c4b04c">Top</span>
+  </div>
+  <div class="product-content">
+    <h3 class="title">{{ product.Name }} <br> <b>{{ product.Brand }}</b></h3>
+    <div *ngIf="product.Discount" class="price">
+      <span>${{ product.Price }}</span>
+      ${{ product.Price - (product.Price * (product.Discount/100)) }}
+    </div>
+    <div *ngIf="!product.Discount" class="price">
+      ${{ product.Price }}
+    </div>
+    <button (click)="onAddToCart()" class="add-to-cart" type="button" style="color: rgb(235, 96, 96)"><i
+        class="fas fa-cart-plus"></i> Add To
+      Cart</button>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="col-md-6 pad-left">
+  <a class="program-img-wrapper" href="{{ program.Url }}" target="_blank">
+    <img class="program-img" src="{{ program.Img }}">
+    <div class="play-btn">
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+          <polygon class="play-btn__svg" points="9.33 6.69 9.33 19.39 19.3 13.04 9.33 6.69"/>
+          <path class="play-btn__svg" d="M26,13A13,13,0,1,1,13,0,13,13,0,0,1,26,13ZM13,2.18A10.89,10.89,0,1,0,23.84,13.06,10.89,10.89,0,0,0,13,2.18Z"/>
+        </svg>
+      </a>
+    </div></a>
+</div>
+<div class="col-md-6">
+  <h3 class="program-heading">  {{ program.Title }}</h3>
+  <div>Rating:&nbsp;&nbsp;
+    <span *ngIf="program.Rating == 0">
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="program.Rating == 1">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="program.Rating == 2">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="program.Rating == 3">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="program.Rating == 4">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="far fa-star"></i></span>
+        </span>
+        <span *ngIf="program.Rating == 5">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+        </span>
+  </div>
+  <div>
+    <br>
+    <i style="padding: 5px; transform: scale(1.4);" class="fas fa-thumbs-up"></i>1234&nbsp;
+    <i style="padding: 7px; transform: scale(1.4)" class="fas fa-thumbs-down"></i>954
+  </div>
+  <p class="desc" [ngClass]="{'show-less': showShortDesciption}">{{ program.Description }}</p>
+  <button type="button" (click)="alterDescriptionText()">
+    {{ showShortDesciption ? 'Show more': 'Show less' }}
+  </button>
+</div>
